@@ -40,6 +40,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
       <div className="TimePickerSpinner-group">
         <label className="TimePickerSpinner-label">HRS</label>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleHoursIncrease}
           title="Increase hours"
@@ -50,6 +51,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
           {String(hours).padStart(2, '0')}
         </div>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleHoursDecrease}
           title="Decrease hours"
@@ -63,6 +65,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
       <div className="TimePickerSpinner-group">
         <label className="TimePickerSpinner-label">MIN</label>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleMinutesIncrease}
           title="Increase minutes"
@@ -73,6 +76,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
           {String(minutes).padStart(2, '0')}
         </div>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleMinutesDecrease}
           title="Decrease minutes"
@@ -86,6 +90,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
       <div className="TimePickerSpinner-group">
         <label className="TimePickerSpinner-label">SEC</label>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleSecondsIncrease}
           title="Increase seconds by 10"
@@ -96,6 +101,7 @@ function TimePickerSpinner({ hours, minutes, seconds, onHoursChange, onMinutesCh
           {String(seconds).padStart(2, '0')}
         </div>
         <button
+          type="button"
           className="TimePickerSpinner-btn"
           onClick={handleSecondsDecrease}
           title="Decrease seconds by 10"
