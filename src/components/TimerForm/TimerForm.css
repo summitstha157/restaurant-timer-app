@@ -1,0 +1,172 @@
+.TimerForm {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.TimerForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
+
+.TimerForm-form {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .TimerForm-form {
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .TimerForm-form {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+.TimerForm-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.TimerForm-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.TimerForm-input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  min-height: 44px;
+  font-weight: 500;
+}
+
+.TimerForm-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  background-color: var(--surface-color);
+}
+
+.TimerForm-input.error {
+  border-color: var(--danger-color);
+}
+
+.TimerForm-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.TimerForm-error {
+  color: var(--danger-color);
+  font-size: 0.7rem;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.TimerForm-submit {
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 700;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 44px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.TimerForm-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.TimerForm-submit:active {
+  transform: translateY(-1px);
+}
+
+.TimerForm-submit:focus-visible {
+  outline: 2px solid var(--primary-dark);
+  outline-offset: 2px;
+}
+
+/* Compact layout for mobile */
+@media (max-width: 640px) {
+  .TimerForm {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .TimerForm-form {
+    gap: var(--spacing-md);
+  }
+
+  .TimerForm-label {
+    font-size: 0.8rem;
+  }
+
+  .TimerForm-submit {
+    width: 100%;
+    min-height: 44px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .TimerForm {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .TimerForm-form {
+    grid-template-columns: 1fr 1.5fr auto;
+    gap: var(--spacing-sm);
+  }
+
+  .TimerForm-input {
+    min-height: 36px;
+    font-size: 0.9rem;
+    padding: 6px var(--spacing-md);
+  }
+
+  .TimerForm-submit {
+    min-height: 36px;
+    padding: 6px var(--spacing-md);
+    font-size: 0.8rem;
+  }
+
+  .TimerForm-label {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,138 @@
+.TimePickerSpinner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.TimePickerSpinner-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.TimePickerSpinner-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.TimePickerSpinner-display {
+  background: linear-gradient(135deg, var(--surface-color), #fafaf9);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: var(--text-primary);
+  min-width: 50px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.TimePickerSpinner-btn {
+  width: 32px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.TimePickerSpinner-btn:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.TimePickerSpinner-btn:active {
+  transform: scale(0.95);
+  box-shadow: var(--shadow-sm);
+}
+
+.TimePickerSpinner-separator {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+/* Responsive sizing */
+@media (max-width: 480px) {
+  .TimePickerSpinner-display {
+    font-size: 1.4rem;
+    min-width: 45px;
+    padding: 8px 12px;
+  }
+
+  .TimePickerSpinner-btn {
+    width: 28px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .TimePickerSpinner-separator {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .TimePickerSpinner {
+    gap: 8px;
+  }
+
+  .TimePickerSpinner-display {
+    font-size: 1.5rem;
+    min-width: 48px;
+  }
+
+  .TimePickerSpinner-btn {
+    width: 30px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .TimePickerSpinner {
+    gap: 6px;
+  }
+
+  .TimePickerSpinner-display {
+    font-size: 1.3rem;
+    min-width: 42px;
+    padding: 6px 10px;
+  }
+
+  .TimePickerSpinner-btn {
+    width: 26px;
+    height: 22px;
+    font-size: 0.65rem;
+  }
+
+  .TimePickerSpinner-label {
+    font-size: 0.6rem;
+  }
+
+  .TimePickerSpinner-separator {
+    font-size: 1.1rem;
+  }
+}

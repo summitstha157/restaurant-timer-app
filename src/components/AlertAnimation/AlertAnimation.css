@@ -1,0 +1,26 @@
+.alert-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.alert-animation-active {
+  animation: pulse-red-overlay 1s ease-out forwards;
+}
+
+@keyframes pulse-red-overlay {
+  0% {
+    background-color: rgba(239, 68, 68, 0.6);
+  }
+  50% {
+    background-color: rgba(239, 68, 68, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}

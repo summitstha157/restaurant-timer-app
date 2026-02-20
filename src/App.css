@@ -1,31 +1,73 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--transition-normal);
 }
 
+/* Hide React logo import if we uncomment it later */
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Responsive header area */
+.App-header {
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Main content area */
+.App > main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Layout for iPad and larger screens */
+@media (min-width: 768px) {
+  .App {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .App-header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .App > main {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Prevent rubber band scrolling on iOS */
+.App {
+  overscroll-behavior: contain;
+}
+
+/* Print styles */
+@media print {
+  .App-header {
+    position: static;
+  }
+}
+
+/* Landscape mode optimization for iPad */
+@media (max-height: 500px) and (orientation: landscape) {
+  .App-header {
+    padding: var(--spacing-md);
+  }
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary-color);
 }
 
 @keyframes App-logo-spin {

@@ -1,0 +1,114 @@
+.TimerControls {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+  background-color: transparent;
+  border-top: none;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.TimerControls-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.TimerControls-btn.primary {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: var(--primary-dark);
+}
+
+.TimerControls-btn.primary:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  transform: scale(1.12);
+  box-shadow: var(--shadow-md);
+}
+
+.TimerControls-btn.primary:active {
+  transform: scale(0.95);
+}
+
+.TimerControls-btn.secondary {
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.TimerControls-btn.secondary:hover {
+  background-color: var(--background-color);
+  border-color: var(--primary-color);
+  transform: scale(1.12);
+  box-shadow: var(--shadow-md);
+}
+
+.TimerControls-btn.danger {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.TimerControls-btn.danger:hover {
+  background-color: var(--danger-color);
+  color: white;
+  transform: scale(1.12);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.TimerControls-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsive sizing */
+@media (max-width: 480px) {
+  .TimerControls-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .TimerControls-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .TimerControls-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .TimerControls {
+    gap: 6px;
+    padding: 4px 0;
+  }
+
+  .TimerControls-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+}

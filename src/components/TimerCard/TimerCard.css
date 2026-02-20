@@ -1,0 +1,270 @@
+/* iPhone Alarm Clock Style - Modern Premium Design */
+.TimerCard {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  min-height: 160px;
+  aspect-ratio: 1;
+  padding: var(--spacing-md);
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+
+.TimerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.02), transparent);
+  pointer-events: none;
+  border-radius: var(--radius-2xl);
+}
+
+.TimerCard:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary-color);
+}
+
+.TimerCard.running {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(255, 134, 89, 0.04));
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1), var(--shadow-hover);
+}
+
+.TimerCard.completed {
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.08), rgba(46, 204, 113, 0.04));
+  border-color: var(--success-color);
+}
+
+/* Image Container - Minimal for alarm clock style */
+.TimerCard-image-container {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--radius-lg);
+}
+
+.TimerCard-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  opacity: 0.9;
+  transition: opacity var(--transition-fast);
+}
+
+.TimerCard-image-container:hover .TimerCard-image {
+  opacity: 1;
+}
+
+.TimerCard-image-edit-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 28px;
+  height: 28px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  opacity: 0;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.TimerCard-image-container:hover .TimerCard-image-edit-btn {
+  opacity: 1;
+}
+
+.TimerCard-image-edit-btn:hover {
+  transform: scale(1.15);
+  box-shadow: var(--shadow-lg);
+}
+
+.TimerCard-image-placeholder-btn {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f5f5, #efefef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  gap: 4px;
+}
+
+.TimerCard-image-placeholder-btn:hover {
+  background: linear-gradient(135deg, #efefef, #e0e0e0);
+  border-color: var(--primary-color);
+  box-shadow: inset 0 2px 4px rgba(255, 107, 53, 0.1);
+}
+
+.TimerCard-image-icon {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.TimerCard-image-text {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+/* Content Area - Centered timer display */
+.TimerCard-content {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.TimerCard-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 0;
+  word-break: break-word;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.TimerCard-completed-badge {
+  display: none;
+}
+
+.TimerCard-waste-message {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  padding: 8px 16px;
+  border-radius: var(--radius-lg);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: waste-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+             waste-pulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+  text-align: center;
+  line-height: 1;
+}
+
+@keyframes waste-bounce {
+  0% {
+    transform: scale(0.3) translateY(20px);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes waste-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.7);
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .TimerCard {
+    min-height: 140px;
+    padding: var(--spacing-md);
+  }
+
+  .TimerCard-image-container {
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .TimerCard-waste-message {
+    font-size: 1.4rem;
+    padding: 6px 12px;
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .TimerCard {
+    min-height: 150px;
+  }
+
+  .TimerCard-image-container {
+    height: 45px;
+  }
+}
+
+@media (min-width: 768px) {
+  .TimerCard {
+    min-height: 160px;
+    aspect-ratio: 1;
+  }
+
+  .TimerCard-image-container {
+    height: 50px;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .TimerCard {
+    min-height: 140px;
+    padding: var(--spacing-md);
+  }
+
+  .TimerCard-image-container {
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .TimerCard-name {
+    font-size: 0.7rem;
+  }
+
+  .TimerCard-waste-message {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    margin-top: 3px;
+    letter-spacing: 1px;
+  }
+}

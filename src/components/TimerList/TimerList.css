@@ -1,0 +1,79 @@
+.TimerList {
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--background-color), rgba(255, 107, 53, 0.02));
+  min-height: calc(100vh - 160px);
+}
+
+.TimerList-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.TimerList-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Mobile - 2 columns */
+@media (min-width: 480px) {
+  .TimerList-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Tablet - 3 columns */
+@media (min-width: 768px) {
+  .TimerList {
+    padding: var(--spacing-lg);
+  }
+
+  .TimerList-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* iPad - 4 columns */
+@media (min-width: 1024px) {
+  .TimerList-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Large iPad/Desktop - 5-6 columns */
+@media (min-width: 1280px) {
+  .TimerList-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .TimerList {
+    padding: var(--spacing-md);
+  }
+
+  .TimerList-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+}
+
+.TimerList-empty {
+  text-align: center;
+  padding: 4rem var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+.TimerList-empty p {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
