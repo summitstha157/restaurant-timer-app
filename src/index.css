@@ -1,22 +1,22 @@
 /* CSS Variables - Design Tokens */
 :root {
-  /* Colors - Modern Warm Palette */
-  --primary-color: #ff6b35;
-  --primary-dark: #e54d1f;
-  --primary-light: #ff8659;
-  --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #ff8659 100%);
-  --gradient-primary-alt: linear-gradient(135deg, #ff8659 0%, #ffa07a 100%);
-  --secondary-color: #f4a460;
+  /* Colors - Vibrant Fresh Palette inspired by atis.life */
+  --primary-color: #2ecc71;
+  --primary-dark: #27ae60;
+  --primary-light: #58d896;
+  --gradient-primary: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  --gradient-primary-alt: linear-gradient(135deg, #58d896 0%, #2ecc71 100%);
+  --secondary-color: #f39c12;
   --success-color: #2ecc71;
   --danger-color: #e74c3c;
   --warning-color: #f39c12;
-  --background-color: #fafaf9;
+  --background-color: #f8f9f7;
   --surface-color: #ffffff;
-  --text-primary: #2c3e50;
-  --text-secondary: #7f8c8d;
-  --text-light: #95a5a6;
-  --border-color: #ecf0f1;
-  --shadow-color: rgba(0, 0, 0, 0.08);
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-light: #999999;
+  --border-color: #e8e8e8;
+  --shadow-color: rgba(0, 0, 0, 0.06);
   --alert-red: rgba(231, 76, 60, 0.8);
 
   /* Spacing */
@@ -39,7 +39,7 @@
   --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 24px 0 rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 16px 40px 0 rgba(0, 0, 0, 0.16);
-  --shadow-hover: 0 12px 32px 0 rgba(255, 107, 53, 0.15);
+  --shadow-hover: 0 12px 32px 0 rgba(46, 204, 113, 0.15);
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

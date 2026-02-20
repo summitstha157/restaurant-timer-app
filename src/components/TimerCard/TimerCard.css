@@ -10,7 +10,7 @@
   box-shadow: var(--shadow-md);
   min-height: 160px;
   aspect-ratio: 1;
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   position: relative;
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
 }
@@ -22,7 +22,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.02), transparent);
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.02), transparent);
   pointer-events: none;
   border-radius: var(--radius-2xl);
 }
@@ -34,13 +34,13 @@
 }
 
 .TimerCard.running {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(255, 134, 89, 0.04));
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.08), rgba(88, 216, 150, 0.04));
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1), var(--shadow-hover);
+  box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.1), var(--shadow-hover);
 }
 
 .TimerCard.completed {
-  background: linear-gradient(135deg, rgba(46, 204, 113, 0.08), rgba(46, 204, 113, 0.04));
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.12), rgba(46, 204, 113, 0.06));
   border-color: var(--success-color);
 }
 
