@@ -90,6 +90,8 @@ export const timerReducer = (state, action) => {
             isPaused: false,
             pausedTime: null,
             startTime: null,
+            completedAt: null,
+            timesCompleted: 0,
           };
         }
         return timer;

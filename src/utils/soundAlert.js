@@ -1,25 +1,47 @@
+// Create a singleton AudioContext
+let audioContext = null;
+
+const getAudioContext = () => {
+  if (!audioContext) {
+    try {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    } catch (error) {
+      console.warn('Failed to create AudioContext:', error);
+      return null;
+    }
+  }
+
+  // Resume audio context if suspended (common on user interaction)
+  if (audioContext.state === 'suspended') {
+    audioContext.resume().catch((err) => console.warn('Failed to resume audio context:', err));
+  }
+
+  return audioContext;
+};
+
 // Create and play a beep sound using Web Audio API
 export const playTimerBeep = (volume = 0.8, duration = 0.5, frequency = 800) => {
   try {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const context = getAudioContext();
+    if (!context) return false;
 
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
+    const oscillator = context.createOscillator();
+    const gainNode = context.createGain();
 
     oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+    gainNode.connect(context.destination);
 
     // Set frequency and type
     oscillator.frequency.value = frequency; // Hz
     oscillator.type = 'sine';
 
     // Set volume
-    gainNode.gain.setValueAtTime(volume, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+    gainNode.gain.setValueAtTime(volume, context.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, context.currentTime + duration);
 
     // Play sound
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + duration);
+    oscillator.start(context.currentTime);
+    oscillator.stop(context.currentTime + duration);
 
     return true;
   } catch (error) {
